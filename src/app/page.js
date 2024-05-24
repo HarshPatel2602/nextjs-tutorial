@@ -1,6 +1,6 @@
-"use client";
-import styles from "./page.module.css";
-import { useState } from "react";
+// "use client";
+// import styles from "./page.module.css";
+// import { useState } from "react";
 
 // export default function Home() {
 //   return (
@@ -11,25 +11,54 @@ import { useState } from "react";
 //   );
 // }
 
-export default function Home() {
-  const [name, setName] = useState("Harsh");
-  // let data = "Harsh"
-  const apple = () => {
-    // data = "Patel"
-    setName("Patel");
-  };
+// export default function Home() {
+//   const [name, setName] = useState("Harsh");
+//   // let data = "Harsh"
+//   const apple = () => {
+//     // data = "Patel"
+//     setName("Patel");
+//   };
 
-  const InnerComp = () => {
-    return (
-      <h1>Inner Component</h1>
-    )
+//   const InnerComp = () => {
+//     return (
+//       <h1>Inner Component</h1>
+//     )
+//   }
+//   return (
+//     <main className={styles.main}>
+//       <h1>Event, function and state {name}</h1>
+//       <button onClick={() => apple()}>Click Me</button>
+//       {/* <InnerComp /> */}
+//       {InnerComp()}
+//     </main>
+//   );
+// }
+
+
+
+"use client"
+import Link from 'next/link'
+import {useRouter} from 'next/navigation'
+
+
+export default function Home() {
+  const router = useRouter();
+  const navigate=(name)=>{
+    router.push(name)
   }
   return (
-    <main className={styles.main}>
-      <h1>Event, function and state {name}</h1>
-      <button onClick={() => apple()}>Click Me</button>
-      {/* <InnerComp /> */}
-      {InnerComp()}
+    <main>
+     <h1>Basic Routing | Make New Page</h1> 
+     <Link href="/login" >Go to Login Page</Link>
+     <br />
+     <br />
+     <Link href="/about" >Go to About Page</Link>
+     <br />
+     <br />
+     <button onClick={()=>navigate("/login")} >Go to Login Page</button>
+     <button onClick={()=>navigate("/about")} >Go to About Page</button>
+
+
     </main>
-  );
+  )
 }
