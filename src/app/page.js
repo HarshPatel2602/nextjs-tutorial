@@ -56,6 +56,8 @@ export default function Home() {
      <br />
      <br />
      <button onClick={()=>navigate("/login")} >Go to Login Page</button>
+     <br />
+     <br />
      <button onClick={()=>navigate("/about")} >Go to About Page</button>
 
 
