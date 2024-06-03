@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const students = ["Harsh", "Het", "Chirag", "Sidhdharth"];
+const students = ["Harsh", "Het", "Chirag", "Siddharth"];
 
 export default function StudentList() {
   return (
@@ -9,7 +9,7 @@ export default function StudentList() {
       <ul>
         {students.map((student, index) => (
           <li key={index}>
-            <Link href={`/studentlist/${student.toLowerCase()}`}>
+            <Link href={`/studentList/${student.toLowerCase()}`}>
               {student}
             </Link>
           </li>
@@ -39,7 +39,7 @@ export default function StudentList() {
 //           <Link href="/studentlist/chirag">Chirag</Link>
 //         </li>
 //         <li>
-//           <Link href="/studentlist/sidhdharth">Sidhdharth</Link>
+//           <Link href="/studentlist/siddharth">Siddharth</Link>
 //         </li>
 //       </ul>
 //     </div>
