@@ -10,5 +10,5 @@ export default function middleware(request){
 
 export const config={
     // matcher:["/about/:path*", "/studentlist/:path*"]
-    matcher:["/about/:path+"]
+    matcher:"/about/:path+"
 }
