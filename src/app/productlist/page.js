@@ -1,14 +1,15 @@
 // Call API in Server Component
 
-const productList=async ()=> {
+import Product from "./product";
+const productList = async () => {
   let data = await fetch("https://dummyapi.online/api/pokemon");
   data = await data.json();
   return data;
-}
+};
 
 export default async function Page() {
   const products = await productList();
-//   console.log(products);
+  //   console.log(products);
 
   return (
     <div>
@@ -19,13 +20,13 @@ export default async function Page() {
           <h2>Type : {item.type}</h2>
           <h3>Abilities : {item.abilities}</h3>
           <h4>Hitpoints : {item.hitpoints}</h4>
+
+          <Product location={item.location} />
         </div>
       ))}
     </div>
   );
 }
-
-
 
 // Call API in Client Component
 
