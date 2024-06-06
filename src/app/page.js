@@ -1,10 +1,8 @@
-import Link from "next/link";
-
 export default function Home() {
   return (
     <main>
-      <h1>Fetch Data With API in Server Component</h1>
-      <Link href="/productlist">Go to Product List</Link>
+      <h1>Style and CSS in Next JS</h1>
+      <h2>Heading 2 in Main Page</h2>
     </main>
   );
 }
