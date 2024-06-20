@@ -24,7 +24,7 @@ export const user = [
     name: "Siddharth",
     age: "25",
     email: "siddharth@gmail.com",
-    city: "Bangalore",
+    city: "Nagaland",
     id: 23,
   },
 ];
