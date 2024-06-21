@@ -29,3 +29,18 @@ export const PUT = async (request, content) => {
   }
   return NextResponse.json({ result: payload, success: true }, { status: 200 });
 };
+
+export const DELETE = (request, content) => {
+  const id = content.params.id;
+  if (id) {
+    return NextResponse.json(
+      { result: "User deleted", success: true },
+      { status: 200 }
+    );
+  } else {
+    return NextResponse.json(
+      { result: "Internal error, Please try after sometime", success: false },
+      { status: 400 }
+    );
+  }
+};
