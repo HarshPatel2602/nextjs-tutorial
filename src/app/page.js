@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function Home() {
 
   return (
     <main>
-        <h1>API Routes</h1>
+        <Link href="/addproduct">Add Product</Link>
     </main>
   );
 }
