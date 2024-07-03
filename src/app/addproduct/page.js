@@ -1,8 +1,11 @@
 "use client";
 import { useState } from "react";
 import "../style.css";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const router = useRouter();
+
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [color, setColor] = useState("");
@@ -38,7 +41,7 @@ const Page = () => {
 
   return (
     <div>
-      <h1>Add Products</h1>
+      <h1 className="title">Add Products</h1>
       <input
         type="text"
         value={name}
@@ -74,9 +77,14 @@ const Page = () => {
         placeholder="Product Category"
         className="input"
       />
-      <button className="btn" onClick={addProduct}>
-        Add Product
-      </button>
+      <div className="btn-container">
+        <button className="btn" onClick={() => router.push("/")}>
+          Back
+        </button>
+        <button className="btn" onClick={addProduct}>
+          Add Product
+        </button>
+      </div>
     </div>
   );
 };

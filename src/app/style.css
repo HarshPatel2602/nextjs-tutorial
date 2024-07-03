@@ -10,17 +10,30 @@
   outline: none;
 }
 
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px; 
+  margin-top: 20px;
+  margin-left: 563px;
+}
+
 .btn {
   height: 35px;
   width: 100px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 15px;
-  padding-left: 10px;
   outline: none;
+  cursor: pointer;
 }
 
 /* .textSize{
