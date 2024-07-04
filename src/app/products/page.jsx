@@ -1,20 +1,22 @@
-"use client"
+"use client";
 
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-
 const Page = () => {
+  const router = useRouter();
+
   const [products, setProducts] = useState([]);
   const getProducts = () => {
-   axios.get("http://localhost:3000/api/products").then((res) => {
-    setProducts(res.data.result)
+    axios.get("http://localhost:3000/api/products").then((res) => {
+      setProducts(res.data.result);
     });
-};
+  };
 
-useEffect(()=>{
-  getProducts();
-},[])
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <div>
       <h1>Product List</h1>
@@ -36,6 +38,14 @@ useEffect(()=>{
               <td>{product.color}</td>
               <td>{product.company}</td>
               <td>{product.category}</td>
+              <td>
+                <button
+                  className="btn1"
+                  onClick={() => router.push(`/products/${product._id}`)}
+                >
+                  Edit
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
