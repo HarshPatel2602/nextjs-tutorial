@@ -14,6 +14,16 @@ const Page = () => {
     });
   };
 
+  const deleteProduct = (id) => {
+    axios
+      .delete(`http://localhost:3000/api/products/${id}`)
+      .then((res) => {
+        setProducts((prevProducts) =>
+          prevProducts.filter((product) => product._id !== id)
+        );
+      });
+  };
+
   useEffect(() => {
     getProducts();
   }, []);
@@ -44,6 +54,14 @@ const Page = () => {
                   onClick={() => router.push(`/products/${product._id}`)}
                 >
                   Edit
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn1"
+                  onClick={() => deleteProduct(product._id)}
+                >
+                  Delete
                 </button>
               </td>
             </tr>
