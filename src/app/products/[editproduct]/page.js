@@ -31,6 +31,20 @@ const Page = (props) => {
     }
   };
 
+  const updateProduct = async () => {
+    let data = await fetch(
+        `http://localhost:3000/api/products/${props.params.editproduct}`,{
+            method:"PUT",
+            body:JSON.stringify({name,price,color,company,category}),
+        }
+      );
+      data = await data.json();
+      if (data.result){
+        alert("Product Updated Successfully");
+        router.push("/products");
+      }
+  }
+
   return (
     <div>
       <h1 className="title">Update Products</h1>
@@ -73,7 +87,7 @@ const Page = (props) => {
         <button className="btn" onClick={() => router.push("/products")}>
           Back
         </button>
-        <button className="btn">Update</button>
+        <button className="btn" onClick={updateProduct}>Update</button>
       </div>
     </div>
   );
